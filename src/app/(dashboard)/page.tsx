@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { formatCurrency, formatDate, getRelativeTime } from '@/lib/utils/format';
 
+// Prevent static generation - this page needs fresh data
+export const dynamic = 'force-dynamic';
+
 export default async function DashboardPage() {
   const stats = await getDashboardStats();
   const recentActivity = await getRecentActivity(5);
