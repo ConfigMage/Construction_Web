@@ -1,4 +1,4 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import { HTMLAttributes, forwardRef, ReactNode } from 'react';
 
 type AlertVariant = 'success' | 'warning' | 'danger' | 'info';
 
@@ -31,7 +31,7 @@ const variantStyles: Record<AlertVariant, { bg: string; border: string; icon: st
   },
 };
 
-const icons: Record<AlertVariant, JSX.Element> = {
+const icons: Record<AlertVariant, ReactNode> = {
   success: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
