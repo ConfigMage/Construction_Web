@@ -10,7 +10,7 @@ export async function GET() {
 
     const dateStr = new Date().toISOString().split('T')[0];
 
-    return new NextResponse(buffer, {
+    return new NextResponse(new Uint8Array(buffer), {
       headers: {
         'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         'Content-Disposition': `attachment; filename="customers_export_${dateStr}.xlsx"`,
