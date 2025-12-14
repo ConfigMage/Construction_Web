@@ -26,7 +26,7 @@ export async function GET(
     const buffer = Buffer.concat(chunks);
 
     // Return PDF response
-    return new NextResponse(buffer, {
+    return new NextResponse(new Uint8Array(buffer), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="Invoice-${invoice.invoiceNumber || invoice.estimateNumber}.pdf"`,
