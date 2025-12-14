@@ -88,6 +88,14 @@ export default function InvoiceViewPage({ params }: { params: Promise<{ id: stri
         description={`Issued ${formatDate(invoice.invoiceDate)}`}
         actions={
           <div className="flex gap-3">
+            <a
+              href={`/api/pdf/invoice/${id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-11 px-6 rounded-lg font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
+            >
+              Download PDF
+            </a>
             {!isPaid && (
               <Button onClick={() => setShowPayDialog(true)}>
                 Record Payment

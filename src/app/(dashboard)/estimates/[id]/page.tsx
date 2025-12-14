@@ -117,6 +117,14 @@ export default function EstimateDetailPage({ params }: { params: Promise<{ id: s
         description={`Created ${formatDate(estimate.estimateDate)}`}
         actions={
           <div className="flex gap-3">
+            <a
+              href={`/api/pdf/estimate/${id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-11 px-6 rounded-lg font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
+            >
+              Download PDF
+            </a>
             {canEdit && !isEditing && (
               <Button variant="outline" onClick={() => setIsEditing(true)}>
                 Edit
