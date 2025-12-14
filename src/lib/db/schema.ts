@@ -42,8 +42,7 @@ export const lineItems = pgTable('line_items', {
   itemNumber: integer('item_number').notNull(),
   action: varchar('action', { length: 100 }).notNull(),
   amount: decimal('amount', { precision: 10, scale: 2 }).notNull(),
-  description: text('description').notNull(),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
+  description: text('description'),
 }, (table) => [
   index('line_items_job_id_idx').on(table.jobId),
 ]);
