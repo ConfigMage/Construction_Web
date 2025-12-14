@@ -42,7 +42,7 @@ export default function EstimateDetailPage({ params }: { params: Promise<{ id: s
           data.lineItems.map((item) => ({
             action: item.action,
             amount: parseFloat(item.amount),
-            description: item.description,
+            description: item.description || '',
           }))
         );
         setNotes(data.notes || '');
@@ -84,7 +84,7 @@ export default function EstimateDetailPage({ params }: { params: Promise<{ id: s
         estimate.lineItems.map((item) => ({
           action: item.action,
           amount: parseFloat(item.amount),
-          description: item.description,
+          description: item.description || '',
         }))
       );
       setNotes(estimate.notes || '');
